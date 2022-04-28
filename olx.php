@@ -35,6 +35,7 @@ function photo_telegram($pic, $msg)
 $url = 'https://rs.olx.com.br/?q='.$find;
 $file = file_get_contents($url);
 $dom = new DOMDocument();
+$dom->loadHTML($file);
 $xpath = new DomXPath($dom);
 $data = $xpath->query('//div[div/@id="listing-main-content-slot"]//ul/li/div');
 
